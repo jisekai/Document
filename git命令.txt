@@ -6,6 +6,18 @@ git config --global user.email "xxxxxxxx" xxxxx代表你的邮箱
 2.生成密钥（SSH Key）
 ssh-keygen -t rsa -C "xxxxxxx" xxxxx代表你的邮箱
 
+操做步骤
+1.生成公钥
+ssh-keygen -t rsa -C "GitHub帐号的注册邮箱"
+2.进入路径
+vim ~/.ssh/id_rsa.pub
+3.复制公钥到GitHub设置SSH and GPG keys中的SSH keys
+ssh
+错误缘由：格式不正确
+解决方法：
+第2步使用以下命令后复制
+cat ~/.ssh/id_rsa.pub
+
 3.验证是否成功
 $ ssh -T git@github.com
 
