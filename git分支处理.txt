@@ -1,0 +1,47 @@
+查看仓库地址
+git remote -v
+git remote show origin
+添加远程地址
+git remote add origin http://git.XXXX.com/XXX/XXX.git/
+修改远程地址
+git remote set-url origin http://git.XXXX.com/XXX/XXX.git/
+
+查看项目的分支们(包括本地和远程)
+命令行 : $ git branch -a
+删除本地分支
+命令行 : $ git branch -d <BranchName>
+删除远程分支
+命令行 : $ git push origin --delete <BranchName>
+
+例如，合并feature分支到master分支：
+原本的命令：
+git merge feature
+修改后命令：允许合并不相关的历史
+git merge feature --allow-unrelated-histories
+
+切换到master分支上
+git checkout master
+
+把远程master上的代码pull下来
+git pull origin master
+
+查看状态及执行提交命令
+git status
+
+在项目的目录下，打开git bush
+// 初始化git文件
+git init 
+// 将本地写好的代码，提交到本地master分支上面
+git add .
+git commit -m 'init'
+// 本地映射远程代码
+git remote add origin [git仓库的地址]
+// 查看远程 映射的路径
+git remote -v
+//将本地的master分支推送到远端,前提是已经将代码内容提交到了本地分值上面
+// 并且远程仓库中没有master分支
+git push -u origin master
+// 保险起见，git pull 一次
+git pull
+// 查看远程与本地的分支，是否符合你的要求
+git branch -a
