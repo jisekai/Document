@@ -1,0 +1,19 @@
+com.unity.renderstreaming
+git clone https://github.com/Unity-Technologies/UnityRenderStreaming
+https://github.com/Unity-Technologies/UnityRenderStreaming
+
+
+
+C:\Program Files (x86)\Android\android-sdk\platform-tools
+
+
+oneplus9 安装密码：z1s1w1l1
+
+
+Vuforia
+Client ID, Client Secret
+FYNX4U5UKUSQN0RDVOAI0, 2Kn1Nh2NfLwWLtbkuF5twZCNLyDWn03qW
+
+touchdesginer
+
+9383359@qq.com    123456789
