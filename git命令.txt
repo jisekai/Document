@@ -1,0 +1,93 @@
+1.设置用户名和邮箱
+git config --global user.name "xxxxxxx" xxxxx代表你的用户名
+
+git config --global user.email "xxxxxxxx" xxxxx代表你的邮箱
+
+2.生成密钥（SSH Key）
+ssh-keygen -t rsa -C "xxxxxxx" xxxxx代表你的邮箱
+
+3.验证是否成功
+$ ssh -T git@github.com
+
+4.将本地的仓库关联到github上
+       使用Bash ，选择一个你代码所要存储的位置，找到你刚创建的仓库并点击code，复制下面的SSH，并输入以下命令：
+
+git clone git@github.com:FdogMain/fdogtest.git
+
+使用以下命令将master分支移到main：
+
+git branch -m master main
+
+使用以下命令将新命名的main分支推送到GitHub(假设这是您的远程存储库)：
+
+git push origin main
+
+使用以下命令将HEAD指向main：
+git symbolic-ref refs / remotes / origin / HEAD refs / remotes / origin / main
+
+现在，您需要将“main”设置为GitHub上您项目的默认分支。为此，登录进入到您的GitHub帐户，打开项目的存储库，点击“设置” |>“分支”。在左侧边栏中，点击“分支”，然后从下拉列表中选择“Main”作为默认值。点击“更新”，出现提示后，点击“我了解”。现在，>回到终端，执行以下命令：
+
+git push origin --delete master
+
+git status 该命令用于查看在你上次提交之后是否有对文件进行再次修改。
+你所写的代码都在工作区，也就是文件夹下。
+
+git add -A 提交所有变化
+git add -u 提交被修改(modified)和被删除(deleted)文件，不包括新文件(new)
+git add . 提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件
+执行上述命令后，代码进入暂存区。
+
+git commit -m ‘注释’ 将暂存区内容添加到本地仓库（版本区）
+
+git push origin mian 将本地版本库推送到远程服务器
+
+代码提交流程：
+
+git status 查看工作区代码相对于暂存区的差别
+git add . 将当前目录下修改的所有代码从工作区添加到暂存区 . 代表当前目录
+git commit -m ‘注释’ 将缓存区内容添加到本地仓库
+git pull origin main先将远程仓库main中的信息同步到本地仓库main中
+git push origin mian 将本地版本库推送到远程服务器，
+origin是远程主机，main表示是远程服务器上的main分支和本地分支重名的简写，分支名是可以修改的。
+
+4.如何查看历史版本
+       比如我现在对代码分别进行了两次更新，我要发送至远程仓库，commit 分别是第二次提交和第三次提交，那么我如何查看我的历史版本呢？
+
+git log 查看历史版本
+
+git log -x 查看最新的x个版本信息
+
+git log -x filename 查看某个文件filename最新的x个版本信息（需要进入该文件所在目录）
+
+git log --pretty=oneline 查看历史所有版本信息，只包含版本号和记录描述
+
+5.如何滚回历史版本
+git reset --hard HEAD^ 回滚到上个版本
+
+git reset --hard HEAD^~2 回滚到前两个版本
+
+git reset --hard xxx(版本号或版本号前几位) 回滚到指定版本号，如果是版本号前几位，git会自动寻找匹配的版本号
+
+git reset --hard xxx(版本号或版本号前几位) filename 回滚某个文件到指定版本号（需要进入该文件所在目录）
+
+6.回退到历史版本如何再滚回去
+git log -g 查看之前操作的commit信息
+
+ 找到你需要滚回的版本之后，按q退出，然后使用下面的命令滚回到你想滚回的版本。
+
+git reset --hard 46f3ecbdfd18153d3b575c768f84c5d8d16c764c 后面的一串是commitID。
+
+查看当前分支
+
+git branch
+
+创建新分支
+
+git branch XX
+
+切换分支
+
+git checkout XX
+
+
+https://blog.51cto.com/u_14770531/6344082
